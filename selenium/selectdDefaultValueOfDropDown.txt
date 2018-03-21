@@ -1,0 +1,3 @@
+a=Select(driver.find_element_by_name("pu_categoryDGWoDataPage_toggle")).first_selected_option.text
+
+logger.info(a)

@@ -1,0 +1,132 @@
+﻿Tupple::::::::
+
+a=2,2,2,3,4,5,6,7
+paranthesin are not mandatory for creating tupple
+
+
+to creat tuppel having only one we need to put final comma other wise it is treated as integer 
+
+ex a=(1,)
+type(a)
+o/p=tupple
+a=(1)
+type(a)
+o/p=integer
+
+
+
+NOTE:	If the negative index is confusing to you, think of it this way:
+a_list[-n] == a_list[len(a_list) - n]. So in this list, a_list[-3] == a_list[5 - 3] == a_list[2].
+
+Tuples are faster than lists. If you’re defining a constant set of values and all you’re ever going to do with it is
+iterate through it, use a tuple instead of a list.It makes your code safer if you “write-protect” data that doesn’t
+need to be changed. Using a tuple instead of a list is like having an implied assert statement that shows this data 
+is constant, and that special thought (and a specific function) is required to override that.
+Some tuples can be used as dictionary keys (specifically, tuples that contain immutable values like strings,
+numbers, and other tuples). Lists can never be used as dictionary keys, because lists are not immutable.
+
+
+
+##########################################################################################################################
+
+
+Tupple are access same as list
+
+
+
+
+But if we try to use item assignment to modify one of the elements of the tuple, we get an error:
+
+>>> tup[0] = 'X'
+TypeError: 'tuple' object does not support item assignment
+Of course, even if we can’t modify the elements of a tuple, we can replace it with a different tuple:
+
+>>> tup = ('X',) + tup[1:]
+>>> tup
+('X', 'b', 'c', 'd', 'e')
+Alternatively, we could first convert it to a list, modify it, and convert it back into a tuple:
+
+>>> tup = ('X', 'b', 'c', 'd', 'e')
+>>> tup = list(tup)
+>>> tup
+['X', 'b', 'c', 'd', 'e']
+>>> tup[0] = 'a'
+>>> tup = tuple(tup)
+>>> tup
+('a', 'b', 'c', 'd', 'e')
+
+
+
+
+##################################################################################################################################
+
+
+
+
+
+11.4. Pure functions and modifiers revisited
+In Pure functions and modifiers we discussed pure functions and modifiers as related to lists. Since tuples are immutable we can not write modifiers on them.
+
+Here is a modifier that inserts a new value into the middle of a list:
+
+#
+# seqtools.py
+#
+
+def insert_in_middle(val, lst):
+    middle = len(lst)/2
+    lst[middle:middle] = [val]
+We can run it to see that it works:
+
+>>> from seqtools import *
+>>> my_list = ['a', 'b', 'd', 'e']
+>>> insert_in_middle('c', my_list)
+>>> my_list
+['a', 'b', 'c', 'd', 'e']
+If we try to use it with a tuple, however, we get an error:
+
+>>> my_tuple = ('a', 'b', 'd', 'e')
+>>> insert_in_middle('c', my_tuple)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "seqtools.py", line 7, in insert_in_middle
+    lst[middle:middle] = [val]
+TypeError: 'tuple' object does not support item assignment
+>>>
+The problem is that tuples are immutable, and don’t support slice assignment. A simple solution to this problem is to make insert_in_middle a pure function:
+
+def insert_in_middle(val, tup):
+    middle = len(tup)/2
+    return tup[:middle] + (val,) + tup[middle:]
+This version now works for tuples, but not for lists or strings. If we want a version that works for all sequence types, we need a way to encapsulate our value into the correct sequence type. A small helper function does the trick:
+
+def encapsulate(val, seq):
+    if type(seq) == type(""):
+        return str(val)
+    if type(seq) == type([]):
+        return [val]
+    return (val,)
+Now we can write insert_in_middle to work with each of the built-in sequence types:
+
+def insert_in_middle(val, seq):
+    middle = len(seq)/2
+    return seq[:middle] + encapsulate(val, seq) + seq[middle:]
+The last two versions of insert_in_middle are pure functions. They don’t have any side effects. Adding encapsulate and the last version of insert_in_middle to the seqtools.py module, we can test it:
+
+>>> from seqtools import *
+>>> my_string = 'abde'
+>>> my_list = ['a', 'b', 'd', 'e']
+>>> my_tuple = ('a', 'b', 'd', 'e')
+>>> insert_in_middle('c', my_string)
+'abcde'
+>>> insert_in_middle('c', my_list)
+['a', 'b', 'c', 'd', 'e']
+>>> insert_in_middle('c', my_tuple)
+('a', 'b', 'c', 'd', 'e')
+>>> my_string
+'abde'
+The values of my_string, my_list, and my_tuple are not changed. If we want to use insert_in_middle to change them, we have to assign the value returned by the function call back to the variable:
+
+>>> my_string = insert_in_middle('c', my_string)
+>>> my_string
+'abcde'

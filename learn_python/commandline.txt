@@ -1,0 +1,5 @@
+import sys
+argument=sys.argv
+print(len(argument))
+#first element of argument list will be the name of the file.
+#sys.argv will always take string as argument.

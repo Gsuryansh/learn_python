@@ -1,0 +1,70 @@
+Encaptulation means wraping of data and method in single unit so that user can not accidently modify the data directly
+from outside the class.
+
+This we can achive by declaring the variable as private inside the class. If we put (__) before the variable python will treat 
+this variable as private.
+
+Example:-
+
+         class BankAccount(object):
+                def __init__(self, account_name="current acconut", balance="200"):
+
+                      self.account_name= account_name
+                      self.balance=balance
+
+         account_object=BankAccount()
+         print(account_object.account_name)
+         print(account_object.balance) #here u can see that we can access the account_name and balance outside the class
+
+
+         account_object.balance=200000
+
+         print(account_object.balance)# we can also modified the value of balance.which is wrong.
+		 
+		 
+Same example with Encaptulation:- 
+                                  
+                                  class BankAccount(object):
+                                  def __init__(self, account_name="current acconut", balance="200"):
+
+                                        self.__account_name= account_name
+                                        self.__balance=balance
+
+                                  account_object=BankAccount()
+                                  print(account_object.account_name)
+                                  print(account_object.balance) #Now these two line will show error
+
+
+                                  account_object.balance=200000
+
+                                  print(account_object.balance)# it will show error
+								  
+								  
+								  
+So now we will define method to access the private variable.
+                                     								  
+                                        class BankAccount(object):
+                                             def __init__(self, account_name="current acconut", balance="200"):
+
+                                                self.__account_name= account_name
+                                                self.__balance=balance
+											 def getBalance(self):
+                                                 print(self.__balance)											 
+
+                                        account_object=BankAccount()
+										account_object.getBalance()#now through this method we can access the variable.
+										
+                                        
+
+
+
+                                  print(account_object._BankAccount__account_name) # we can still access the private variable
+								                    # that means priavte variable get renamed by adding _classname in the begning
+													of the variable.
+
+# Note:- That means by declaring variable as private will stop accidental modification.	
+
+# Note:- Accessing private variable outside the calls 
+                                                objectname._classname__varivablename.							  
+
+

@@ -1,0 +1,24 @@
+Css is faster then xpath because xpath is evaluate by xpath engine and css evaluate directly.
+Css will not change according to the browser.
+
+
+Some symbol for writing css selector
+
+#:- this is for id
+
+. :-  this is for class
+
+* for contains
+input[id*='suryansh']
+
+^ for starts-with
+
+$ for ends-with
+
+tagname[attribute='value']
+
+tagname[attribute1='value1'][attribute2='value2'] this is for multiple attribute
+
+input[id='suryansh'] same can be writen as 
+
+input#suryansh

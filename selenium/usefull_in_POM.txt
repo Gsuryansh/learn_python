@@ -1,0 +1,11 @@
+Locatin Element:- There are various locator in selenium.
+
+Example:- driver.find_element_by_id("")
+          driver.find_element_by_name("")etc
+
+
+Apart from this there are private method which are usefull in POM.
+
+driver.find_element(By.XPATH,"")
+
+For the above example u need to import BY class "import from selenium.webdriver.common.by import By"		  

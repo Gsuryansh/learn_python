@@ -1,0 +1,12 @@
+seperator.join(iterable):
+
+iterable can be list tupple dictonary but its element should be string 
+
+it will take each element from the iterable and concatinate them using seperator.
+
+Example:
+         seperator="suryansh"
+		 list=['a','b','c']
+		 seperator.join(list)
+		 
+		 o/p: asuryanshbsuryanshcsuryansh

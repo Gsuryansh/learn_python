@@ -1,0 +1,3 @@
+Assert will verify the result if the test case fails it will stop the further execution.
+
+Verify will verify the result if the test case fails it will not stop the execution.

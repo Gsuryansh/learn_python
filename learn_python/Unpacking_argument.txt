@@ -1,0 +1,19 @@
+""" This is for *args"""
+
+
+def fun(a,b,c,d):
+    print(a,b,c,d)
+a=(1,2,3,4)
+fun(*a)	
+
+#o/p: 1,2,3,4
+
+
+""" This is for **args  """
+
+
+def f(a,b,c,d):
+    print(a,b,c,d)
+args={'a':1,'b':2,'c':3,'d':4}
+f(**args)	
+    

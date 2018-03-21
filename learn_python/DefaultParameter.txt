@@ -1,0 +1,48 @@
+"""Defaul Parameter in python:- Default Parameter in python means provide the value to the variable in fuction declaration
+ and varible hold the same value if no other value is passed as an argument
+ """
+def function(val,data=[]):
+     data.append(val)
+     return data
+a=function(1)
+print(a)
+b=function(2)
+print(b)
+
+""" In the above example we are not sending the value for data=[] thats why it is holding the prvious value
+ and giving the output [1,2] when we are calling b=function(2)
+ """
+
+'''  o/p:-  [1]
+            [1,2]  '''
+
+
+
+def function(val,data=[]):
+     data.append(val)
+     return data
+a=function(1)
+print(a)
+b=function(2,[])
+print(b)
+
+
+""" In the above example we are sending the value for data=[] thats why it is not holding the prvious value
+ and giving the output [2] when we are calling b=function(2)
+ """
+
+''' o/p:-
+           [1]
+           [2]   '''
+
+
+def function(data=[]):
+     #data.append(val)
+     return data
+a=function(1)
+print(a)
+b=function(2)
+print(b)
+
+'''   o/p:-   1
+              2     '''

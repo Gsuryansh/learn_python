@@ -1,0 +1,43 @@
+"Static variable":-
+
+Static variable are also called class variable because there value does not change according to the object.i.e value of class varible remains same for all the 
+object that's why they are called static variable because there value does not change.
+
+In java or c++ they used static keyword to declare static variable.but in python we don't static keyword we directly declare the variable inside the class.
+
+Example:-
+
+# Python program to show that the variables with a value 
+# assigned in class declaration, are class variables
+ 
+# Class for Computer Science Student
+class CSStudent:
+    stream = 'cse'                  # Class Variable
+    def __init__(self,name,roll):
+        self.name = name            # Instance Variable
+        self.roll = roll            # Instance Variable
+ 
+# Objects of CSStudent class
+a = CSStudent('Geek', 1)
+b = CSStudent('Nerd', 2)
+ 
+print(a.stream)  # prints "cse"
+print(b.stream)  # prints "cse"
+print(a.name)    # prints "Geek"
+print(b.name)    # prints "Nerd"
+print(a.roll)    # prints "1"
+print(b.roll)    # prints "2"
+ 
+# Class variables can be accessed using class
+# name also
+print(CSStudent.stream) # prints "cse"
+
+
+Note:- if you change the value of class variable through object then it will not change the value of class variable but creat an instance 
+variable for that object.If you want to change the value of class variable then change it through class name.
+
+
+
+
+
+

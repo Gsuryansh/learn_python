@@ -1,0 +1,92 @@
+Python Function always return a value if there is a return statement then return that value present in the statement Otherwise return "NONE".
+"def" Is a executable code and when it runs generate a object and give it a name as the name of function
+
+def times(x, y):     # Create and assign function
+	return x * y     # Body executed when called
+
+    times(2, 5)          # Arguments in parentheses
+Output: 10
+
+times('blah!', 4)
+
+Output: 'blah!blah!blah!blah!'
+
+The Above two are the example of polymorphism.
+
+###########################################################################################################################
+
+IMP:  Putting *args and/or **kwargs as the last items in our function definition's argument list allows that function to accept an arbitrary number 
+of anonymous and/or keyword arguments. 
+
+Example:
+
+
+         def f(*args):
+	         print(args)
+
+        f() 
+        f(1,2,3)
+        f(0)
+OUTPUT:  
+
+       ()	
+       (1,2,3,)	
+       (0,)	
+NOTE:- *args Collects all the argument in the form of tupple
+
+
+
+IMP: The ** is similar but it only works for keyword arguments. In other words, it collects them into a new dictionary. 
+Actually, ** allows us to convert from keywords to dictionaries:
+
+
+def f(**kwargs):
+	print(kwargs)
+
+
+f()
+
+OUTPUT: {} #Type is dictionary
+
+
+f(a=10, b=20)
+
+OUTPUT: {'a':10,'b':10}
+
+
+
+####################################################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	   

@@ -1,0 +1,241 @@
+DIRECTORIES:- The module called os contains functions to get information on local directories, files, processes, and environment variables.
+
+
+1. os.getcwd():- The current working directory is a property that Python holds in memory at all times. 
+
+2. os.path.join():- os.path contains functions for manipulating filenames and directory names.
+   The os.path.join() function constructs a pathname out of one or more partial pathnames.
+   
+EXAMPLE: 1.print(os.path.join('/test/', 'myfile')) ## O/P:- /test/myfile 
+         2.print(os.path.join('/test/', '/myfile')) ## O/P:- /myfile
+
+		 
+NOTE: Note: we need to be careful about the string when we use os.path.join. If we use "/", it tells Python that we're using absolute path,
+and it overrides the path before it .AS u can see in example 2 it overrides test.
+
+
+3. os.path.split():- os.path also contains functions to split full pathnames, directory names, and filenames into their constituent parts.
+                     It takes the path and split it in two parts one is path and second is file names
+					 
+Example:  import os,sys
+          pa=os.path.join(os.getcwd(),'parctice.py')
+          pth,fle=os.path.split(pa)                          ###  OUTPUT:- C:\Users\GSuryansh\PycharmProjects\untitled\lesson1\task1
+                                                                           parctice.py
+          print(pth)															                                       
+          print(fle)
+		 					 
+							 
+NOTE:- pth=os.path.split(pa) #####  This statement returns tuppel	
+       pth,fle=os.path.split(pa) ####  This statment returns string 	
+
+
+NOTE:-  os.path.splitext() :- Split the file name and its extension.
+
+
+
+EXAMPLE:- import os,sys
+          pa=os.path.join(os.getcwd(),'parctice.py')   ###############   OUTPUT:- ('parctice', '.py')
+          pth,fle=os.path.split(pa)
+          print(os.path.splitext(fle))	   
+		  
+		  
+		  
+		  
+############################################################################################################################
+
+
+########OPENING A FILE#########################################3
+
+
+
+myfile = open('mydir/myfile.txt', 'w') 
+
+
+
+Mode	Description
+r	    Opens a file for reading only. The file pointer is placed at the beginning of the file. This is the default mode.
+
+rb	    Opens a file for reading only in binary format. The file pointer is placed at the beginning of the file. This is the default mode.
+
+r+	    Opens a file for both reading and writing. The file pointer will be at the beginning of the file. 
+        Gives Error if file not present.File pointer is at the begning of the file if u write in to the file it over write the content 
+		present in the file.
+		
+		EXAMPLE: If file already has content "Suryansh" And if u write "babu" in this file then the file content modified as "babuansh" 
+
+rb+   	Opens a file for both reading and writing in binary format. The file pointer will be at the beginning of the file.
+
+w   	Opens a file for writing only. Overwrites the file if the file exists. If the file does not exist, creates a new file for writing.
+
+wb	    Opens a file for writing only in binary format. Overwrites the file if the file exists. If the file does not exist, 
+         creates a new file for writing.
+		 
+w+	    Opens a file for both writing and reading. Overwrites the existing file if the file exists. If the file does not exist, creates
+         a new file for reading and writing.
+		 
+a   	Opens a file for appending. The file pointer is at the end of the file if the file exists. That is, the file is in the append mode. 
+        If the file does not exist, it creates a new file for writing.
+		
+ab   	Opens a file for appending in binary format. The file pointer is at the end of the file if the file exists. 
+        That is, the file is in the append mode. If the file does not exist, it creates a new file for writing.
+		
+a+   	Opens a file for both appending and reading. The file pointer is at the end of the file if the file exists. 
+        The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.
+		
+ab+	    Opens a file for both appending and reading in binary format. The file pointer is at the end of the file if the file exists.
+        The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.
+		
+		
+		
+		
+		
+#############NOTE:-  When you open a file, the system points to the beginning of the file. Any read or write you do will happen from the beginning. 
+A seek() operation moves that pointer to some other part of the file so you can read or write at that place.
+		
+So, if you want to read the whole file but skip the first 20 bytes, open the file, seek(20) to move to where you want to start reading,
+then continue with reading the file.
+
+fp.seek(offset, from_what)
+
+
+offset:- means how many positions you will move;
+from_what:- 0: means your reference point is the beginning of the file
+            1: means your reference point is the current file position
+            2: means your reference point is the end of the file
+			
+			
+			
+			
+tell():- Its returns the current position of the pointer in the file.
+
+
+
+
+
+
+#######################WITH STATEMENT#############################			
+
+So we explicitly call close() method to close the file. What will happen if our code has bug and code crash before close()
+So our file wiil unnecessarily open. "WITH" is one solution to overcome this probleum.	
+
+EXAMPLE:		
+			
+		 with open('Alone.txt') as file:
+	          file.seek(16)
+	          char = file.read(1)
+	          print(char)	
+			
+			
+			
+The code above never calls file.close(). The with statement starts a code block, like an if statement or a for loop.
+Inside this code block, we can use the variable file as the stream object returned from the call to open(). 
+All the regular stream object methods areavailable - seek(), read(), whatever we need. When the with block ends, Python calls file.close()
+automatically.
+
+EXAMPLE:                                 import os,sys
+                                             with open("aaaa.txt","r") as filee:
+                                             print(filee.read())                     ###This will print the content in the file
+
+                                         print(filee.read())                  #####This line gives ValueError: I/O operation on closed file
+										                                           because the file is already closed   
+
+
+
+
+																				   
+																				   
+																				   
+																				   
+NOTE :-that no matter how or when we exit the with block, Python will close that file even if we exit it via an unhandled exception.
+
+##########################################################################
+import os,sys
+with open("aaaa.txt","r") as filee:
+    for line in filee:
+        print(line)
+		
+		
+		
+The above code is to access one line at a time		
+
+
+##########################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		  
+		  
+		  
+		  
+		  
+		  

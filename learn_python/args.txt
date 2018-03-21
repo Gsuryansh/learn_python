@@ -1,0 +1,124 @@
+def fun ():
+
+def create an object and assign a name func to it. This fun name can be assing to other name also like
+
+eg: name=fun  # this line assign function object to name variable now u can call the function like this name()
+
+######## program to find common element in sequence########
+
+
+def intersect(ls1,ls2):
+    a=[x for x in ls1 if x in ls2]
+    return a
+s1=suryansh
+s2=sandeep
+print(intersect(s1,s2))
+
+
+O/P=[s,a,n] 	
+
+
+######### Default Argument ##########
+
+
+def fun(a,b=2,c=3): ## here b and are the default argument if no value passed during function call it will take default value
+    print(a,b,c)
+	
+fun(1)
+fun(10,23)
+fun(10,20,30)
+fun()	
+
+
+############ Kewword Argument##############
+
+def fun(a,b,c):
+    print(a,b,c)
+fun(1,2,3)
+fun(c=10,b=20,a=30)
+fun(1,c=30,c=20)
+
+
+########### *args ###############
+
+It is used when we are not sure how many arument we wiil pass.
+
+def fun(*args):
+    print(args)# It will always return tupple
+fun(1,2,3,4)
+
+O/P: (1,2,3,4)	
+
+
+#######################  **args #########################################
+
+This is also works like *args but it works only with keyword argument.It collect them to new dictionary.
+
+>>> def f(**kwargs):
+	print(kwargs)
+	
+>>> f()
+{}
+>>> f(a=10, b=20)
+{'a': 10, 'b': 20}
+
+
+
+
+#######################  Unpacking arguments  ##############################
+
+
+*args and **args are used as argument in the function call. It unpack a collection of argument.
+
+
+Example:  
+
+>>> def f(a, b, c, d, e):
+	print(a, b, c, d, e)
+	
+>>> args = (10, 20)
+>>> args += (30, 40, 50)
+>>> f(*args)
+
+O/P:   10 20 30 40 50
+
+
+""" This is for **args  """
+
+
+def f(a,b,c,d):
+    print(a,b,c,d)
+args={'a':1,'b':2,'c':3,'d':4}
+f(**args)
+
+O/P: 1,2,3,4	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+     

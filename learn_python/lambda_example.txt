@@ -1,0 +1,95 @@
+""" Function without lambda """
+
+def nrml(a):
+    return a*3
+b=nrml(3)
+print(b)
+
+
+""" Same function with lambda """
+
+lam = lambda x: x*3
+b=lam(3)
+print(b)
+
+
+"""Default Argument in lambda """
+
+lam = lambda a= 'suryansh' ,b= 'sandeep', c= 'akash': a+b+c
+
+ab=lam('gupta','mohanty')
+print(ab)
+
+""" Another example of lambda """
+
+def writer():
+	title = 'Sir'
+	name = (lambda x:title + ' ' + x)
+	return name
+	
+who=writer()
+a=who("Suryansh gupta") # this line will call the lambda inside the def function
+print(a)	
+
+
+""" Finding minimum vale from given two number using lambda """
+
+min = (lambda x,y: x if x<y else y)
+
+ans = min(1234,12345)
+print(ans)
+
+
+""" WHY LAMBDA """
+
+
+
+lam = [lambda x:x**2,lambda x: x**3,lambda x : x**4]
+for f in lam:
+    print (f(2))
+	
+	
+print lam[0](3)	
+
+""" O/P: 4,8,16,9 """
+
+
+
+""" Same with def """
+
+def f1(x):
+    return x**2
+def f2(x):
+    return x**3
+def f3(x):
+    return x**4
+F=[f1,f2,f3]
+for f in F:
+    print(f(2)) 
+	
+	
+""" Nested Lambda """	
+
+
+def action(x):
+    
+
+    return(lambda fx : x + fx)
+	
+ans=action(10)
+print(ans)
+print(ans(10))
+
+# this same can be done by lambda instead of def
+
+ans= (lambda x : (lambda fx : fx + x))
+a=ans(10)
+print(ans(19))
+print(a(18))
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+driver.driver.current_url # it will give u the current url.
+driver.title # it will give the title of the page.
+maximize_window()
+
+
+driver.close():- It will close the window on which the focus is set.
+driver.quit():- It will call driver.dispose method and close all the windows.
+
+save_screenshot(fileName)# give the full path 
+
+
+
+Haddeling cirtificate issue 
+For Firefox:
+			profile = webdriver.FirefoxProfile()
+			profile.accept_untrusted_certs = True
+			
+For Chrome:  
+			options = webdriver.ChromeOptions()
+			options.add_argument('--ignore-certificate-errors')
+			
+For IE: 
+
+        capabilities = webdriver.DesiredCapabilities().INTERNETEXPLORER
+        capabilities['acceptSslCerts'] = True
+
+		driver = webdriver.Ie(capabilities=capabilities)			

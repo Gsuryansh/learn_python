@@ -1,0 +1,110 @@
+############################## MAP #####################################
+
+One of the common things we do with list and other sequences is applying an operation to each item and collect the result.
+
+
+EXAMPLE: 
+
+items = [1, 2, 3, 4, 5]
+squared = []
+for x in items:
+	squared.append(x ** 2)
+
+	
+print(squared)
+"""O/P:  [1, 4, 9, 16, 25] """
+
+""" Same with MAP """
+
+def fun(x):
+    return x**2
+itm=[2,3,4,5,6,7,8,9]	
+ab=map(fun,itm)
+print(ab)	
+
+""" o/p: [4, 9, 16, 25, 36, 49, 64, 81]"""
+
+
+Note: So map basically take two argument first is function and second is sequence.And call the function for every value of the sequence and return a list.
+
+""" Another Example with lambda """
+items=[1,2,3,4,5]
+ab=(map((lambda x: x **2), items))
+print(ab)
+
+""" o/p: [1,4,9,16,25] """
+
+
+""" Using funcions as a sequence and lambda as a function """
+def square(x):
+    return x**2
+def cube(x):
+    return x**3
+sequence=[square,cube]
+
+for i in range(5):
+    value = map(lambda x : x(i) , sequence)	
+	print(value)
+
+""" O/P: [0, 0]
+[1, 1]
+[4, 8]
+[9, 27]
+[16, 64] """
+
+
+""" Writing your own map function """
+def fun(x):
+    return x**2
+def my_map(func , seq):
+    temp_list=[]
+	for i in seq:
+	    temp_list.append(func(i))
+	return temp_list
+li=mymap(fun,[1,2,3,4,5,6])
+print(li)	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

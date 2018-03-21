@@ -1,0 +1,17 @@
+import xlrd
+
+xlrd is the package used to read data from xlsx file.
+
+workbook = xlrd.open_workbook("full path of your xl file")#open_workbook will open ur xl file.
+
+workbook.nsheets # it will return the number of sheets present in the given xl file
+
+workbook.sheets_name() # it will return the list contaning the name of the sheets.
+
+sheet=workbook.sheet_by_name("name of the sheet u want to open")
+workbook.sheet_by_index("index of the sheet u want to open")
+
+sheet.row_values("row index")
+sheet.cell_value(0,0) # it will give value of 0th row and 0th column.
+sheet.ncols # give number of cols in the xl.
+sheet.nrows # give the number of rows in the xl.

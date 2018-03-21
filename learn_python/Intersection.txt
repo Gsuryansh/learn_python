@@ -1,0 +1,18 @@
+"""  This method gives the common element present in the two list or string  """
+
+
+
+class intersect(object):
+
+    def Intersect(self,seq1,seq2):
+        temp=[]
+        for item in seq1:
+            if item not in temp:
+                temp.append(item)
+        print(temp)
+        return [val for val in temp if val in seq2]
+
+ob=intersect()
+a='suryansh'
+b='vaibhav'
+print(ob.Intersect(a,b))

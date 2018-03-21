@@ -1,0 +1,48 @@
+{
+    "communication": {
+        "reg_ip": "192.168.0.75", 
+        "_comment": "ip_address & port number => JPOS; reg_ip & reg_port => Portal_JPOS; Port has to be NonSSL ports", 
+        "reg_port": 20319, 
+        "port_number": 20317, 
+        "timeout": 180, 
+        "buffer_size": 1024, 
+        "ip_address": "192.168.0.75"
+    }, 
+    "terminal": {
+        "tid": "A0107001", 
+        "_comment": "ensure that given tid is already configured in portal_configuration.cfg_unipay_terminal table", 
+        "on_us_tid": "00004401", 
+        "umfk": "44652B632EE1BB3063B8E8FA841B1107"
+    }, 
+    "main_database": {
+        "_comment": "this is JPOS_TXN DB", 
+        "db_name": "jpos_transaction", 
+        "port_number": 3306, 
+        "user": "qa", 
+        "password": "password", 
+        "ip_address": "192.168.0.80"
+    }, 
+    "portal_database": {
+        "_comment": "This is PORTAL_CONFIG DB", 
+        "db_name": "portal_configuration", 
+        "port_number": 3306, 
+        "user": "qa", 
+        "password": "password", 
+        "ip_address": "192.168.0.79"
+    }, 
+    "mis_database": {
+        "_comment": "This is PORTAL_MIS DB", 
+        "db_name": "portal_mis", 
+        "port_number": 3306, 
+        "user": "qa", 
+        "password": "password", 
+        "ip_address": "192.168.0.80"
+    }, 
+    "bank_info": {
+        "bank_id_sbi": "16", 
+        "_comment": "this is for diff banks supported. Check with Phani for new supported banks", 
+        "bank_id_unipay": "18", 
+        "bank_id_hdfc": "07"
+    }, 
+    "bank_simulator": "192.168.0.77"
+}

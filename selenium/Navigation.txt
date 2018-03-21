@@ -1,0 +1,61 @@
+self.driver = webdriver.Firefox()
+it will iniciate the firefox instance.
+
+driver.get("Your url")
+it will redirect u to your page url. And webdriver wait untill page has fully loaded (that is, the onload event has fired).
+But if your code use lot of ajax call then webdriver may not know when the page has fully loaded in that case u need use wait.
+
+
+Select(driver.find_element_by_id('id')).deselect_all() ## this will deselect all the selected value.
+
+Select(driver.find_element_by_id('id')).all_selected_options ## it will give the list of all the selected option.
+
+
+
+
+        ###############Moving between windows and frames#############
+		
+		
+		driver.switch_to_window("windowname")
+		driver.switch_to_frame("frame name")
+But how do u know the windows name.
+
+<a href="somewhere.html" target="windowName">Click here to open a new window</a>
+
+
+Alternatively, you can pass a “window handle” to the “switch_to_window()” method. Knowing this,
+it’s possible to iterate over every open window like so:
+
+Ex: for handle in driver.window_handles:
+        driver.switch_to_window(handle)	
+
+NOTE:- window_handles return the list contaning name of all the windows present and the first element of the list is current window name.
+
+Ex:- 
+    hl=[]
+	
+	for handle in window_handles:
+	    hl.append(handle)
+		
+	driver.switch_to_frame("frame name")
+        	do the operation on this frame
+			
+	driver.switch_to_frame(hl[0]) # this will switch back to the current frame
+
+or else u can use driver.switch_to_default_content() To return to the current frame.	
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+

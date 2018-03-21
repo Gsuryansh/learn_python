@@ -1,0 +1,23 @@
+class shroom(object):
+    def move(self):
+        print("Big mario is moving")
+class mario(object):
+    def move(self):
+        print("I am moving")
+
+class BigMarion(mario,shroom):
+    def __init__(self):
+        print("yegyu")
+
+Bm=BigMarion()
+Bm.move()
+
+
+so here we have two classes shroom and marion and third class Bigmarion inheriting both the parent class.And both mario and shroom 
+have same method move().When we creat an object of child class and call the method move().First it will check the method in the child
+class itself if it does not find the method it will goto to the child class defination and search from right to left
+Method Resolution Order (MRO)
+
+In our case it will call the method of mario because it is the left most in the child class definetion.
+
+ 

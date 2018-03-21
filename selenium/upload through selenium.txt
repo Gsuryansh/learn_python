@@ -1,0 +1,10 @@
+driver.find_element_by_link_text("100057").click()
+
+driver.find_element_by_name("ai_addAttachment").click()
+
+driver.find_element_by_xpath(".//*[@id='currentRequest']/div[2]/form/table/tbody/tr[18]/td[2]/input[1]").send_keys("C:\\imp points.txt")
+
+driver.find_element_by_name("ai_saveUpload").click()
+
+
+if it is input tag we can directly give path

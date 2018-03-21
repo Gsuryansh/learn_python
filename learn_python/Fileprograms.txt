@@ -1,0 +1,23 @@
+Calculating Space,taband number of line in the file.
+
+
+
+class File(object):
+    space=0
+    tab=0
+    lines=0
+    def __init__(self,file):
+        self.fileobj=open(file)
+    def file_operations(self):
+        for self.lines,line in enumerate(self.fileobj):
+            self.space=self.space+line.count(' ')
+            self.tab+=line.count('\t')
+        self.fileobj.close()
+        print("Number of space in the file ",self.space)
+        print("Number of tab in the file ",self.tab)
+        print("Number of lines in the file ",self.lines+1)
+obj=File("file.txt")
+obj.file_operations()
+
+
+#################################################################################################################

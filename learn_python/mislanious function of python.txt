@@ -1,0 +1,7 @@
+1.swapcase(): Used to swape the case of string i.e if char in the string is small char then it will make as capital and wise versa
+
+2.divmod(a,b): Takes two argument and return the tuppel where the first element in quotient and second element is remainder.
+
+E.X divmod(10,3)
+
+o/p:(3,1)

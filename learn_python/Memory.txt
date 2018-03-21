@@ -1,0 +1,3 @@
+Python memory is managed by python private heap space.All data structure and boject are located in this private heap.
+Programer dosent have access to this private heap.The allocation of Python heap space for Python objects is done by Python memory manage.
+Python also have inbuilt garbage collector

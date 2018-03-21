@@ -1,0 +1,8 @@
+List are mutable tupple are immutable.
+
+Mutable: It means that the value of an object can be changed after its creation.
+
+Immutable: Value of an object can not be changed after it creation.
+
+Benifit of using immutable is that it requires less memory.because python allocate an overhead memory while creating immutable object
+to modify later.

@@ -1,0 +1,24 @@
+12.7. Counting letters
+In Chapter 7, we wrote a function that counted the number of occurrences of a letter in a string. A more general version of 
+this problem is to form a histogram of the letters in the string, that is, how many times each letter appears.
+
+Such a histogram might be useful for compressing a text file. Because different letters appear with different frequencies,
+ we can compress a file by using shorter codes for common letters and longer codes for letters that appear less frequently.
+
+Dictionaries provide an elegant way to generate a histogram:
+
+>>> letter_counts = {}
+>>> for letter in "Mississippi":
+...   letter_counts[letter] = letter_counts.get (letter, 0) + 1
+...
+>>> letter_counts
+{'M': 1, 's': 4, 'p': 2, 'i': 4}
+We start with an empty dictionary. For each letter in the string, we find the current count (possibly zero) and increment it. 
+At the end, the dictionary contains pairs of letters and their frequencies.
+
+It might be more appealing to display the histogram in alphabetical order. We can do that with the items and sort methods:
+
+>>> letter_items = letter_counts.items()
+>>> letter_items.sort()
+>>> print letter_items
+[('M', 1), ('i', 4), ('p', 2), ('s', 4)]

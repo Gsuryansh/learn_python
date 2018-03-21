@@ -1,0 +1,57 @@
+##################Stack########################################
+
+
+class Stack(object):
+    def __init__(self):
+        self.list = []
+    def push(self, element):
+        self.list.append(element)
+    def pop(self):
+        return self.list.pop()
+    def is_empty(self):
+        return len(self.list) == 0
+abc=Stack()
+abc.push(10)
+abc.push(11)
+abc.push(12)
+abc.push(13)
+abc.push(14)
+while not abc.is_empty():
+     print(abc.pop())
+
+Live Example of stack: For example, every web browser has a Back button.
+As you navigate from web page to web page, those pages are placed on a stack (actually it
+is the URLs that are going on the stack). The current page that you are viewing is on the
+top and the first page you looked at is at the base.
+If you click on the Back button, you begin to move in reverse order through the pages.
+
+
+
+#################Queue#########################################
+
+
+
+
+class Queue(object):
+    def __init__(self):
+        self.head=0
+        self.tail=0
+        self.list=[]
+        self.n=0
+    def equeue(self,data):
+        self.list.append(data)
+        self.tail+=1
+        self.n+=1
+    def dqueue(self):
+        if self.n==0:
+            return None
+        e=self.list[self.head]
+        self.head+=1
+        self.n-=1
+        return e
+obj=Queue()
+obj.equeue(10)
+obj.equeue(15)
+print(obj.dqueue())
+print(obj.dqueue())
+print(obj.dqueue())

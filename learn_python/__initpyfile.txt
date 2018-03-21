@@ -1,0 +1,37 @@
+The primary use of __init__.py file is to initialize python package.
+
+Example:- Suppose we have folder structure like this.
+
+          Package/
+		      __init__.py
+			  file.py
+			  file1.py
+			  file2.py
+			  
+			  
+			  
+			  subpackage/
+			          __init__.py
+					  submodule1.py
+                      submodule2.py
+					  
+
+In the above example python interpreter treat package folder as Python package because it contain __init__.py file.
+
+
+What goes in __init__.py?:- __init__.py can be empty file. But it is often used to perform set need for package.
+
+Suppose we have a class File in file.py and we want to impot it without writing in __init__.py we will do like this.
+
+from Package.file import File
+
+Same can be done like this also by writing in __init__.py file.
+
+Inside __init__.py
+     from file import File
+
+from package import File.
+
+
+
+	 

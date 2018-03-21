@@ -1,0 +1,23 @@
+﻿Python concatenates adjacent string literals in any expression.
+
+
+Example:
+
+suryansh = "suryansh" " gupta "
+
+o/p:
+
+suryansh gupta
+
+
+if we place coma (,) between the it will return tupple.
+
+Example:
+
+suryansh= "suryansh", " gupta"
+
+o/p:
+
+('suryansh','gupta')
+
+

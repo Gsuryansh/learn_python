@@ -1,0 +1,25 @@
+If you add these two lines of code to the top of your program:
+
+from random import randint
+secret = randint(1, 10)
+
+
+The secret variable will be set to a random number between 1 and 10. Modify your
+program from the facing page so that instead of the answer always being 5, it will
+instead use a random number from 1 to 10 as the answer
+
+Swaping two variable without third variable
+a=17
+b=23
+a=(a*b)
+b=a/b
+a=a/b
+print(a,b)
+
+
+Remainder without using % operator
+a=9
+b=7
+
+c=a-(a/b)*b
+print(c)

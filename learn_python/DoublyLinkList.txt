@@ -1,0 +1,50 @@
+class Node(object):
+    def __init__(self,data,next,prev):
+        self.data=data
+        self.next=next
+        self.prev=prev
+
+class DoublyLinkedList(object):
+    head=None
+    tail=None
+    def append(self,value):
+        node=Node(value, None, None)
+        if self.head==None:
+            self.head=self.tail=node
+        else:
+            node.prev=self.tail
+            node.next=None
+            self.tail.next=node
+            self.tail=node
+
+    def show(self):
+        current_node=self.head
+        while current_node is not None:
+            print(current_node.data)
+            current_node=current_node.next
+
+    def remove(self,node_value):
+        current_node=self.head
+        while current_node is not None:
+            if current_node.data==node_value:
+                if current_node.prev is None:
+                    self.head=current_node.next
+                    current_node.prev=None
+                else:
+                    current_node.prev.next=current_node.next
+                    current_node.next.prev=current_node.prev
+            current_node=current_node.next
+obj=DoublyLinkedList()
+print("before remove")
+obj.append(10)
+obj.append(11)
+obj.append(12)
+obj.append(13)
+obj.append(14)
+obj.append(15)
+
+obj.show()
+print("after remove")
+obj.remove(11)
+obj.remove(14)
+obj.show()

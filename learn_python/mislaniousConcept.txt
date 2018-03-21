@@ -1,0 +1,133 @@
+#From python 3 on wards double slash i.e // wiil always perform integerd division regardles the operand types.
+
+
+Example: 9.0//2=4.0
+
+         9.0/2=4.5
+         
+         9/2=4.5
+
+The above example is for python 3
+
+
+
+And if u want to use the same operator in 2 then import 
+
+from __future__ import division
+
+
+Example:-  9/2=4
+
+           9.0//2=4.0
+
+           9.0/2=4.5 
+
+THese example for python 2 only
+
+
+
+################################################################################################
+
+
+class Parent(object):
+    x = 1
+
+class Child1(Parent):
+    pass
+
+class Child2(Parent):
+    pass
+
+print Parent.x, Child1.x, Child2.x
+Child1.x = 2
+print Parent.x, Child1.x, Child2.x
+Parent.x = 3
+print Parent.x, Child1.x, Child2.x
+
+
+The O/P of the above program is 1 1 1, 1 2 1, 3 2 3
+
+
+
+Reason:What confuses or surprises many about this is that the last line of output is 3 2 3 rather than 3 2 1. Why does changing the value of Parent.
+x also change the value of Child2.x, but at the same time not change the value of Child1.x?
+
+The key to the answer is that, in Python, class variables are internally handled as dictionaries.
+ If a variable name is not found in the dictionary of the current class, the class hierarchy (i.e., 
+its parent classes) are searched until the referenced variable name
+ is found (if the referenced variable name is not found in the class itself or anywhere in its hierarchy, an AttributeError occurs).
+
+Therefore, setting x = 1 in the Parent class makes the class variable x (with a value of 1) referenceable in that class and any of its children.
+ That’s why the first print statement outputs 1 1 1.
+
+Subsequently, if any of its child classes overrides that value (for example, when we execute the statement Child1.x = 2), 
+then the value is changed in that child only. That’s why the second print statement outputs 1 2 1.
+
+Finally, if the value is then changed in the Parent (for example, when we execute the statement Parent.x = 3), 
+that change is reflected also by any children that have not yet overridden the value (which in this case would be Child2).
+ That’s why the third print statement outputs 3 2 3.
+
+####################################################################################################################
+
+
+
+
+Consider the following code snippet:
+
+1. list = [ [ ] ] * 5
+2. list  # output?
+3. list[0].append(10)
+4. list  # output?
+5. list[1].append(20)
+6. list  # output?
+7. list.append(30)
+8. list  # output?
+What will be the ouput of lines 2, 4, 6, and 8? Explain your answer.
+
+
+The output will be as follows:
+
+[[], [], [], [], []]
+[[10], [10], [10], [10], [10]]
+[[10, 20], [10, 20], [10, 20], [10, 20], [10, 20]]
+[[10, 20], [10, 20], [10, 20], [10, 20], [10, 20], 30]
+Here’s why:
+
+The first line of output is presumably intuitive and easy to understand; i.e., list = [ [ ] ] * 5 simply creates a list of 5 lists.
+
+However, the key thing to understand here is that the statement list = [ [ ] ] * 5 does NOT create a list containing 5 distinct lists; rather, 
+it creates a a list of 5 references to the same list. With this understanding, we can better understand the rest of the output.
+
+list[0].append(10) appends 10 to the first list. But since all 5 lists refer to the same list, the output is: [[10], [10], [10], [10], [10]].
+
+Similarly, list[1].append(20) appends 20 to the second list. But again, since all 5 lists refer to the same list, the output is now: [[10, 20],
+ [10, 20], [10, 20], [10, 20], [10, 20]].
+
+In contrast, list.append(30) is appending an entirely new element to the “outer” list, which therefore yields the output: [[10, 20], [10, 20], 
+[10, 20], [10, 20], [10, 20], 30].
+
+
+
+
+#############################################################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

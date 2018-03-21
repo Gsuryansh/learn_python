@@ -1,0 +1,42 @@
+11.10. List comprehensions
+A list comprehension is a syntactic construct that enables lists to be created from other lists using a compact, mathematical syntax:
+
+>>> numbers = [1, 2, 3, 4]
+>>> [x**2 for x in numbers]
+[1, 4, 9, 16]
+>>> [x**2 for x in numbers if x**2 > 8]
+[9, 16]
+>>> [(x, x**2, x**3) for x in numbers]
+[(1, 1, 1), (2, 4, 8), (3, 9, 27), (4, 16, 64)]
+>>> files = ['bin', 'Data', 'Desktop', '.bashrc', '.ssh', '.vimrc']
+>>> [name for name in files if name[0] != '.']
+['bin', 'Data', 'Desktop']
+>>> letters = ['a', 'b', 'c']
+>>> [n*letter for n in numbers for letter in letters]
+['a', 'b', 'c', 'aa', 'bb', 'cc', 'aaa', 'bbb', 'ccc', 'aaaa', 'bbbb', 'cccc']
+>>>
+The general syntax for a list comprehension expression is:
+
+[expr for  item1 in  seq1 for item2 in seq2 ... for itemx in seqx if condition]
+This list expression has the same effect as:
+
+output_sequence = []
+for item1 in seq1:
+    for item2 in seq2:
+        ...
+            for itemx in seqx:
+                if condition:
+                    output_sequence.append(expr)
+
+
+
+
+
+
+
+NOTE: It is a powerfull way to work on matrix suppose u want the second coloumn of every row of the matrix.
+
+EXAMPLE;  M=[[1,2,3],[2,3,4],[3,4,5]]
+col=[a[1] for a in M] 
+
+o/p:  [2,3,4]

@@ -1,0 +1,15 @@
+Adding element of nested list using recursion
+
+
+
+
+def list_sum(list):
+    sum=0
+    for num in list:
+        if type(num)==type([]):
+            sum=sum+list_sum(num)
+        else:
+            sum=sum+num
+    return sum
+num_list=[1,25,36,79,88,[34,23,12],8,9,7,4]
+print(list_sum(num_list))

@@ -1,0 +1,17 @@
+class palindrom(object):
+    def __init__(self):
+        self.strng=raw_input("Enter a string:")
+    def is_palindrom(self):
+        flag=0
+        for index in range((len(self.strng))/2):
+            if self.strng[index]==self.strng[len(self.strng)-(index+1)]:
+                  pass
+            else:
+                flag=1
+                break
+        if flag==0:
+            print("String is palindrom")
+        else:
+            print("String is not palindrom")
+obj=palindrom()
+obj.is_palindrom()

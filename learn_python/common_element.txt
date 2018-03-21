@@ -1,0 +1,9 @@
+def intersect(ls1,ls2):
+    [x for x in ls1 if x in ls2]
+    return x
+s1="suryansh"
+s2="sandeep"
+print(intersect(s1,s2))
+
+
+O/P=[s,a,n] 

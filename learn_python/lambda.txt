@@ -1,0 +1,171 @@
+Python supports the creation of anonymous functions (i.e. functions that are not bound to a name) at runtime, using a construct called lambda.
+
+Like def, the lambda creates a function to be called later. But it returns the function instead of assigning it to a name.
+
+This is why lambdas are sometimes known as anonymous functions. 
+
+Lambda dosent have return keyword. It always contain an expression which is returned
+
+
+############## difference b/w normal function and lambda function ####################
+
+
+
+def nrml(a):
+    return a*3
+b=nrml(3)
+print(b)
+
+O/P: 9
+
+
+## Same with lambda
+
+lam= lambda x : x*3
+
+print(lam(3))
+
+o/p: 9	
+
+
+#######  General form of lambda's ############
+
+lambda arg1, arg2, ...argN : expression using arguments
+
+NOTE: 1. Lambda is an expression, not a statement.
+
+2. lambda's body is a single expression, not a block of statements.
+
+
+############# Default Argument in lambda #########################
+
+lam = lambda a= 'suryansh' ,b= 'sandeep', c= 'akash': a+b+c
+
+ab=lam('gupta','mohanty')
+print(ab)
+
+
+O/P: guptamohantyakash
+
+
+
+Example:
+
+def writer():
+	title = 'Sir'
+	name = (lambda x:title + ' ' + x)
+	return name
+
+who = writer()
+who('Arthur Ignatius Conan Doyle')
+O/P:  Sir Arthur Ignatius Conan Doyle
+
+
+
+Note: If we know what we're doing, we can code most statements as expressions:
+
+Example: min = (lambda x,y: x if x<y else y)
+
+         ans = min(1234,12345)
+		 
+		 O/P: 1234
+		 
+		 
+		 
+################################# WHY LAMBDA ###############################################
+
+Because it is an expression it can be embedded with in the list also but cant embedded def in the list because it is an statement.
+
+Example: lam = [lambda x:x**2,lambda x: x**3,lambda x : x**4]
+         for f in lam:
+		 print (f(2))
+		 
+		 
+		 O/P: 4,8,16
+		 
+		 
+#Same with def#
+
+Example:  
+
+
+def f1(x):
+    return x**2
+def f2(x):
+    return x**3
+def f3(x):
+    return x**4
+F=[f1,f2,f3]
+for f in F:
+    print(f(2)) 	
+	
+	
+	
+############## Nested Lambda #####################
+
+
+def action(x):
+    
+
+    return(lambda fx : x + fx)
+	
+ans=action(10)
+print(ans)
+print(ans(10)
+################Same with lambda #####################
+
+ans= (lambda x : (lambda fx : fx + x))
+a=ans(10)
+print(ans(19))
+print(a(18))
+
+		 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

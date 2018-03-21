@@ -1,0 +1,8 @@
+Gecko Driver is the link between your tests in Selenium and the Firefox browser. 
+GeckoDriver is a proxy for using W3C WebDriver-compatible clients to interact with Gecko-based browsers i.e.
+Mozilla Firefox in this case.As Selenium 3 will not have any native implementation of FF,
+we have to direct all the driver commands through Gecko Driver. Gecko Driver is an executable file that you need
+to have in one of the system path before starting your tests. Firefox browser implements the WebDriver protocol using
+an executable called GeckoDriver.exe. This executable starts a server on your system. All your tests communicate to this
+server to run your tests. It translates calls into the Marionette automation protocol by acting as a proxy between the local
+and remote ends.

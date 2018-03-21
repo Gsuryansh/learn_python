@@ -1,0 +1,249 @@
+enumerate(sequence, start=0):- 
+
+
+
+
+Return an enumerate object.sequence must be a sequence, an iterator,  
+or some other object which supports iteration. The next() method of the
+iterator returned by enumerate() returns a tuple containing a count
+(from start which defaults to 0) and the values obtained from iterating over sequence
+
+
+Return a tuple with sequence number and the element on that position
+
+list=[1,2,3,4,5,6,7]
+for i,x in enumerate(list):
+   print(i,x)
+
+
+
+OUTPUT:-
+(0, 1)
+(1, 2)
+(2, 3)
+(3, 4)
+(4, 5)
+(5, 6)
+(6, 7)
+
+
+
+list1=[1,2,3,4,5,6,7]
+print(list(enumerate(list1)))
+
+
+
+OUTPUT:-
+
+[(0, 1), (1, 2), (2, 3), (3, 4), (4, 5), (5, 6), (6, 7)]
+
+
+
+##############   zip- Iterate over two lists in parallel  ###################################
+
+
+alist = ['a1', 'a2', 'a3']
+blist = ['b1', 'b2', 'b3']
+
+for a, b in zip(alist, blist):
+    print a, b
+
+
+
+OUTPUT:-
+
+a1 b1
+a2 b2
+a3 b3
+
+
+
+
+
+
+
+
+alist = ['a1', 'a2', 'a3']
+blist = ['b1', 'b2', 'b3']
+
+for b in zip(alist, blist):
+    print  b
+
+
+
+OUTPUT:-
+
+
+
+('a1', 'b1')
+('a2', 'b2')
+('a3', 'b3')
+
+
+
+#################################  enumerate with zip  #################################
+
+alist = ['a1', 'a2', 'a3']
+blist = ['b1', 'b2', 'b3']
+
+for i, (a, b) in enumerate(zip(alist, blist)):
+    print i, a, b
+
+
+
+
+
+
+
+OUTPUT:-
+
+
+0 a1 b1
+1 a2 b2
+2 a3 b3
+
+
+
+
+
+
+
+
+
+
+alist = ['a1', 'a2', 'a3']
+blist = ['b1', 'b2', 'b3']
+
+for  (a, b) in enumerate(zip(alist, blist)):
+    print a, b
+
+
+
+
+OUTPUT:-
+
+
+0 ('a1', 'b1')
+1 ('a2', 'b2')
+2 ('a3', 'b3')
+
+
+
+
+
+
+
+
+
+alist = ['a1', 'a2', 'a3']
+blist = ['b1', 'b2', 'b3']
+
+for  (a, b) in enumerate(zip(alist, blist)):
+    print b
+
+
+OUTPUT:-
+
+
+('a1', 'b1')
+('a2', 'b2')
+('a3', 'b3')
+
+
+
+
+
+
+alist = ['a1', 'a2', 'a3']
+blist = ['b1', 'b2', 'b3']
+
+for  (a, b) in enumerate(zip(alist, blist)):
+    print a
+
+
+OUTPUT:-
+
+0
+1
+2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

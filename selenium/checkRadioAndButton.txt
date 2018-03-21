@@ -1,0 +1,8 @@
+driver.find_element_by_xpath("").is_enabled # check wheather the element on the webpage is enabled or not.it can be button or radio button etc.
+
+driver.find_element_by_xpath("").get_attribute("atribute") # this will return the value of the attribute u mentioned.
+
+driver.find_element_by_xpath("").is_displayed() # check wheather the element is displayed or not in the webpage.
+
+driver.find_element_by_xpath("").is_selected() # tell wheather the checkbox is checked or not.
+

@@ -1,0 +1,21 @@
+Self is the object itself.
+
+Example:  
+
+
+class abc():
+ 
+    def __init__(self):
+	   print("Something")
+	   
+	def xyz(self):
+        print("Inside xyz")
+
+
+obj=abc()
+
+obj.xyz() # ptyhon convert this statment as abc.xyz(obj) that means self reciving the object itself
+
+Python "self" is same like "this" in c++ and java.	
+
+Instance variable are the variable whose value assigned inside the init function or by self inside the function

@@ -1,0 +1,18 @@
+os.path.join(path1[, path2[, ...]])
+Join one or more path components intelligently
+ If any component is an absolute path, all previous components (on Windows, including the previous drive letter, 
+if there was one) are thrown away, and joining continues. The return value is the concatenation of path1, 
+and optionally path2, etc., with exactly one directory separator (os.sep) following each non-empty part except
+ the last. (This means that an empty last part will result in a path that ends with a separator.) 
+Note that on Windows, since there is a current directory for each drive, os.path.join("c:", "foo") 
+represents a path relative to the current directory on drive C: (c:foo), not c:\foo.
+
+os.path.join does much more:
+
+>>> os.path.join("/home/", "/home/foo")
+'/home/foo'
+>>> "/home/" + os.sep + "/home/foo"
+'/home///home/foo'
+
+You will never have a situation where os.path.join is the bottleneck of your program,
+ so use it, it's much more readable too.

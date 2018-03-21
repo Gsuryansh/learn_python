@@ -1,0 +1,66 @@
+Basic syntax of xpath:- Single attribute xpath.
+                        //tagname[@attribute='value']
+						 
+						Example:- //a[@href='www.google.com'] it will find the element whose tagname is a and having href ="www.google.com"
+						
+						          //input[@id='name']
+								  
+								  
+								  
+								  
+								  
+						#Multiple Attribute xpath.
+                             //tagname[@attribut1='value1'][@aatribute2='value2']
+                            Example:- 
+
+                                   //input[@id='name'][@name='abc']
+								   
+								   
+						AND and OR operator:-
+                                
+                               //tagname[@attribut1='value1' or @attribute2='value2']i.e any of the attribute match.
+                               //tagname[@attribut1='value1' and @attribut2='value2']	i.e both value should be matched.	
+
+# XPATH using Contains:
+                        //tagname[contains(@attribute,'value')]
+                        
+                        Example:
+                                //input[contains(@name,'suryansh')] it will search for the input tag that attribute name value contain
+      								suryansh
+
+# text()method:- //tagname[text()='value']		
+                 //a[text()='Forgotten account?'] #here it will search for the tag a which has text Forgotten account?
+				 
+				 
+				 
+# XPATH using starts-with:- It will find specific pattern only at the starting.
+                       
+                        //tagname[statrs-with(@attribute,'value')]
+                         
+
+                        //input[start-with(@id,'edit')]
+
+
+#XPATH using following:- In this we will first identify one element and based on this we will search for the other element.
+                          
+                        //input[@id='suryansh']//following::your desire element	
+
+
+#XPATH using preceding :- 
+                          
+                         //input[@id,'suryansh']//preceding::your desire element
+
+#XPATH using ancestor:- Through this u can identify all the parents and grandparents nodes also that means tag under the tag
+                        
+                        //input[@id,'suryansh']//ancestor::your desire element	
+
+#XPATH using descendant:-Through this u can identify all the children  and grandchildren nodes also that means tag under the tag
+                              
+                             							  
+           							
+								   
+
+
+
+
+								  

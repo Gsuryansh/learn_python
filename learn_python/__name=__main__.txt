@@ -1,0 +1,16 @@
+If we run the python file directly then it name the __name__ variable as __main__.
+
+
+
+Example: 
+
+    Suppose we have python file as abc.py
+	
+	#abc file coding.
+	
+	
+	print(__name__)# it will print __main__
+	
+	
+	Suppose we have another file called xyz.py and we will import abc.py file in xyz then the variable __name__ in abc will be name 
+	of the file i.e abc

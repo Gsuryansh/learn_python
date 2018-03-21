@@ -1,0 +1,235 @@
+################################### YIELD IN PYTHON#####################################
+
+
+
+
+The yield enables a function to comeback where it left off when it is called again. This is the critical difference from a regular function.
+A regular function cannot comes back where it left off. The yield keyword helps a function to remember its state.
+
+
+
+EXAMPLE:
+        def foo_with_yield():
+           yield 1
+           yield 2
+           yield 3
+
+        # iterative calls
+        for yield_value in foo_with_yield():
+           print yield_value,
+Output:
+1 2 3
+
+
+
+
+
+
+
+
+SO, WHAT IS IT RETURNING?:-
+
+                         In the previous same, what actually returns is a generator object. We can see it from a modified code:
+
+def foo_with_yield():
+    yield 1
+    yield 2
+    yield 3
+
+x=foo_with_yield()
+print x
+print next(x)
+print x
+print next(x)
+print x
+print next(x)
+Output:
+
+<generator object foo_with_yield at 0x7f6e4f0f1e60>
+1
+<generator object foo_with_yield at 0x7f6e4f0f1e60>
+2
+<generator object foo_with_yield at 0x7f6e4f0f1e60>
+3
+
+
+
+Note :- Generator function is also a normal kind of function the only difference is that insted of rerurn it used "YIELD".And this type of 
+        function returns generator object and next() returns the next value of the object.
+        yield hault the execution and start the execution from the same poit where it left.
+
+
+
+
+
+
+ def create_counter(n):
+	print('create_counter()')
+	while True:
+		yield n
+		print('increment n')
+		n += 1
+		
+ c = create_counter(2)
+ c
+<generator object create_counter at 0x03004B48>
+ next(c)
+create_counter()
+2
+ next(c)
+increment n
+3
+ next(c)
+increment n
+4
+
+
+#####################FIBONACCI USING YIELD##############################
+
+def fibonacci():
+	Limit = 10
+	count = 0
+	a, b = 0, 1
+	while True:
+		yield a
+		a, b = b, a+b
+		if (count == Limit):
+			break
+		count += 1
+
+for n in fibonacci():
+	print(n, end=' ')
+	
+	
+	
+	NOTE: a,b=b,a+b works like
+	c=a+b
+	a=b
+	b=c
+	
+	
+NOTE:- If u iterate iterator object throug the loop then it will automatically call the next( ) function . Like in prvious example of fibonacci.
+
+
+NOTE:- pass a generator to the list() function, and it will iterate through the entire generator (just like the for loop in the previous example)
+and return a list of all the values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

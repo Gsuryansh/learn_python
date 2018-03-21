@@ -1,0 +1,30 @@
+Operators with the same precedence are evaluated from left to right
+
+
+
+
+##########program to remove vowel from the string####################
+
+
+def remove_vowels(s):
+    vowels = "aeiouAEIOU"
+    s_without_vowels = ""
+    for letter in s:
+        if letter not in vowels:
+            s_without_vowels += letter
+    return s_without_vowels
+#####################################################################
+
+
+
+################A Find Function in python############################
+
+def find(strng, ch):
+    index = 0
+    while index < len(strng):
+        if strng[index] == ch:
+            return index
+        index += 1
+    return -1
+
+#####################################################################
