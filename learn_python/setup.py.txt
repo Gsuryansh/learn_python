@@ -1,0 +1,4 @@
+If by default setuptools is not including your static file like .txt file,.json or .gdst file.Then creat a "MANIFEST.in" file in the same directory where your setup.py 
+file present and provide the path of your static file there.
+
+Example: include autotest/config/*.json

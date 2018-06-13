@@ -1,0 +1,7 @@
+Install Uncompyle6
+
+run Uncompyle6 complied file name
+
+
+
+python -m py_compile file name (It will convert .py file to .pyc file i.e it will compile the file)

@@ -1,0 +1,1 @@
+class is basically a blue print which tell us what data every class object has and what are the action can be perfomed on that data.

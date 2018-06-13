@@ -1,0 +1,5 @@
+Python neither follw call by value nor call by reference, it basically follows "call by object reference".
+
+Example:-  a = 3
+
+here a is the variable and 3 is the object which is stored in the memory so when you pass "a" as the parameter you are sending refrence of memory location where 3 is stored. 

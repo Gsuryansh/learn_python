@@ -1,0 +1,3 @@
+After import x, you can refer to things in x like x.something. After from x import *, you can refer to things in x directly just as something. Because the second form imports the names directly into the local namespace, it creates the potential for conflicts if you import things from many modules. Therefore, the from x import * is discouraged.
+
+You can also do from x import something, which imports just the something into the local namespace, not everything in x. This is better because if you list the names you import, you know exactly what you are importing and it's easier to avoid name conflicts.
