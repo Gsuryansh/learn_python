@@ -17,4 +17,5 @@ class Directory(object):
                 os.makedirs("Report")
         path = os.path.dirname(os.path.abspath(__file__)) + "\Report"
         os.chdir(path)
-#print(os.path.dirname(os.path.abspath(__file__)))print(os.getcwd())
+print(os.path.dirname(os.path.abspath(__file__)))
+print(os.getcwd())

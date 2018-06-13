@@ -36,6 +36,22 @@ print(CSStudent.stream) # prints "cse"
 Note:- if you change the value of class variable through object then it will not change the value of class variable but creat an instance 
 variable for that object.If you want to change the value of class variable then change it through class name.
 
+Example:- 
+
+class abc(object):
+    class_variable = 10# class variable
+
+    def __init__(self):
+        self.class_variable =11 # it will creat instance variable because we are accessing it through instance
+        abc.class_variable = 12 # it will change the class_variable to 12 because it is accessing through class
+
+
+obj = abc()
+print(obj.class_variable)# it will print 11 because under __init__ we have creat a instance variable by accessing class_variable through self
+print(abc.class_variable) # it will print 12 because we are accessing it through class ie abc
+
+# NOTE: if we comment out self.class_variable in __init__ then obj.class_variable will access the class variable itself
+
 
 
 

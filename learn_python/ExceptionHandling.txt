@@ -59,4 +59,25 @@ try:
    # perform file operations
 finally:
    f.close()#finally block will always execute wheather try will raise an exception or not.
+   
+   
+   
+""" ELSE block """ 
+
+
+try:
+
+     some piece of code
+
+except:
+
+     Some code
+	 
+else:
+
+     It will only excute if try block will not raise any exception.
+
+
+	 
+     	 
     

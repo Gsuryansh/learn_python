@@ -4,12 +4,9 @@ Like def, the lambda creates a function to be called later. But it returns the f
 
 This is why lambdas are sometimes known as anonymous functions. 
 
-Lambda dosent have return keyword. It always contain an expression which is returned
+Lambda dosent have return keyword. It always contain an expression which is returned.
 
-
-############## difference b/w normal function and lambda function ####################
-
-
+############## Difference b/w normal function and lambda function ####################
 
 def nrml(a):
     return a*3
@@ -27,7 +24,6 @@ print(lam(3))
 
 o/p: 9	
 
-
 #######  General form of lambda's ############
 
 lambda arg1, arg2, ...argN : expression using arguments
@@ -36,7 +32,6 @@ NOTE: 1. Lambda is an expression, not a statement.
 
 2. lambda's body is a single expression, not a block of statements.
 
-
 ############# Default Argument in lambda #########################
 
 lam = lambda a= 'suryansh' ,b= 'sandeep', c= 'akash': a+b+c
@@ -44,10 +39,7 @@ lam = lambda a= 'suryansh' ,b= 'sandeep', c= 'akash': a+b+c
 ab=lam('gupta','mohanty')
 print(ab)
 
-
 O/P: guptamohantyakash
-
-
 
 Example:
 
@@ -61,7 +53,6 @@ who('Arthur Ignatius Conan Doyle')
 O/P:  Sir Arthur Ignatius Conan Doyle
 
 
-
 Note: If we know what we're doing, we can code most statements as expressions:
 
 Example: min = (lambda x,y: x if x<y else y)
@@ -69,9 +60,7 @@ Example: min = (lambda x,y: x if x<y else y)
          ans = min(1234,12345)
 		 
 		 O/P: 1234
-		 
-		 
-		 
+		 	 
 ################################# WHY LAMBDA ###############################################
 
 Because it is an expression it can be embedded with in the list also but cant embedded def in the list because it is an statement.
